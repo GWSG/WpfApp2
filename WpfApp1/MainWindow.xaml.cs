@@ -50,7 +50,7 @@ namespace WpfApp1
 
             foreach (Triangle triangle in triangles)
             {
-                string resultMessage = $"邊長 {triangle.Side1} {triangle.Side2} {triangle.Side3} ";
+                string resultMessage = $"邊長 {triangle.Side1}, {triangle.Side2}, {triangle.Side3} ";
                 if (triangle.IsTriangle)
                 {
                     resultMessage += "可以形成三角形";
