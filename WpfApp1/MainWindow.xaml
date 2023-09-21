@@ -3,14 +3,20 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="txtSide1" HorizontalAlignment="Left" Margin="270,201,0,0" VerticalAlignment="Top" Width="200" Background="#FFB0B1E4" Height="30"/>
-        <TextBox x:Name="txtSide2" HorizontalAlignment="Left" Margin="270,145,0,0" VerticalAlignment="Top" Width="200" Height="30" Background="#FFA5A6E8"/>
-        <TextBox x:Name="txtSide3" HorizontalAlignment="Left" Margin="270,251,0,0" VerticalAlignment="Top" Width="200" Height="30" Background="#FFA9A9D4"/>
-        <Label x:Name="lblResult" Content="輸入三個三角形的邊長" HorizontalAlignment="Left" Margin="13,65,0,0" VerticalAlignment="Top" Width="228" RenderTransformOrigin="0.519,0.523" FontSize="22" Background="#FFE6A9A9"/>
+        <TextBox x:Name="txtSide1" HorizontalAlignment="Left" Margin="270,201,0,0" VerticalAlignment="Top" Width="200" Background="#FFB0B1E4" Height="30" FontSize="22"/>
+        <TextBox x:Name="txtSide2" HorizontalAlignment="Left" Margin="270,145,0,0" VerticalAlignment="Top" Width="200" Height="30" Background="#FFA5A6E8" FontSize="22"/>
+        <TextBox x:Name="txtSide3" HorizontalAlignment="Left" Margin="270,251,0,0" VerticalAlignment="Top" Width="200" Height="30" Background="#FFA9A9D4" FontSize="22"/>
+        <Label x:Name="lblResult" Content="輸入三個三角形的邊長" HorizontalAlignment="Left" Margin="13,65,0,0" VerticalAlignment="Top" Width="307" RenderTransformOrigin="0.519,0.523" FontSize="22" Background="#FFE6A9A9"/>
         <Label x:Name="lblResult1" Content="第三個邊長" HorizontalAlignment="Left" Margin="12,249,0,0" VerticalAlignment="Top" Width="228" RenderTransformOrigin="0.519,0.523" FontSize="22" Background="#FFA9E6AA"/>
         <Label x:Name="lblResult2" Content="第二個邊長" HorizontalAlignment="Left" Margin="12,0,0,0" VerticalAlignment="Center" Width="228" RenderTransformOrigin="0.519,0.523" FontSize="22" Background="#FFA9E6AA"/>
         <Label x:Name="lblResult3" Content="第一個邊長" HorizontalAlignment="Left" Margin="11,140,0,0" VerticalAlignment="Top" Width="228" RenderTransformOrigin="0.519,0.523" FontSize="22" Background="#FFA9E6AA"/>
-        <TextBlock x:Name="txtResultLog" HorizontalAlignment="Left" Margin="594,314,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <Button x:Name="Button" Content="啟動" HorizontalAlignment="Left" VerticalAlignment="Top" Width="177" Margin="482,65,0,0" Click="CheckTriangle_Click" Height="42" FontSize="22"/>
+
+        <Button x:Name="Button" Content="啟動" HorizontalAlignment="Left" VerticalAlignment="Top" Width="177" Margin="509,65,0,0" Click="CheckTriangle_Click" Height="42" FontSize="22"/>
+        <ScrollViewer HorizontalAlignment="Left" Margin="493,145,0,0" VerticalAlignment="Top" Height="138" Width="232">
+            <TextBlock x:Name="txtResultLog" TextWrapping="Wrap" OpacityMask="White" Foreground="#FF060606" Background="#FFFEFF9C" Cursor="AppStarting" FontSize="22" TextAlignment="Center" FontWeight="Bold">
+        <Run Language="zh-tw" Text="歷史紀錄"/>
+            </TextBlock>
+        </ScrollViewer>
+
     </Grid>
 </Window>

@@ -33,7 +33,7 @@ namespace WpfApp1
 
             if (!Double.TryParse(txtSide1.Text, out side1) || !Double.TryParse(txtSide2.Text, out side2) || !Double.TryParse(txtSide3.Text, out side3) || side1 <= 0 || side2 <= 0 || side3 <= 0)
             {
-                MessageBox.Show("Please enter valid positive numbers for all sides.");
+                MessageBox.Show("請輸入大於0的整數");
                 return;
             }
 
