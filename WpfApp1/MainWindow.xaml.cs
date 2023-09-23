@@ -84,7 +84,7 @@ namespace WpfApp1
 
         private bool IsTrianglePossible(double a, double b, double c)
         {
-            return (a + b > c) && (a + c > b) && (b + c > a);
+            return (a*a + b*b > c*c) && (a * a + c*c > b*b) && (b * b + c * c > a*a);
         }
     }
 
