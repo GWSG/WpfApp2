@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="450" Width="800">
     <Grid OpacityMask="White" Background="White">
-        <TextBox x:Name="txtSide1" HorizontalAlignment="Left" Margin="269,225,0,0" VerticalAlignment="Top" Width="200" Height="30" FontSize="22" Cursor="Pen">
+        <TextBox x:Name="txtSide2" HorizontalAlignment="Left" Margin="269,225,0,0" VerticalAlignment="Top" Width="200" Height="30" FontSize="22" Cursor="Pen">
             <TextBox.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFE1FCFF" Offset="1"/>
@@ -11,7 +11,7 @@
                 </LinearGradientBrush>
             </TextBox.Background>
         </TextBox>
-        <TextBox x:Name="txtSide2" HorizontalAlignment="Left" Margin="270,145,0,0" VerticalAlignment="Top" Width="200" Height="30" FontSize="22" TextWrapping="WrapWithOverflow" Cursor="Pen">
+        <TextBox x:Name="txtSide1" HorizontalAlignment="Left" Margin="270,145,0,0" VerticalAlignment="Top" Width="200" Height="30" FontSize="22" TextWrapping="WrapWithOverflow" Cursor="Pen">
             <TextBox.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White"/>
