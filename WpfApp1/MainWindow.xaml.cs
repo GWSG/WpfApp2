@@ -1,3 +1,4 @@
+
 using System;
 // 引入System命名空間，包含了基本的C#類型和函數。
 
@@ -31,13 +32,19 @@ namespace WpfApp1
             double side1, side2, side3;
             // 宣告三個double型態的變數side1、side2和side3，用於存儲輸入的三個邊長。
 
+
+            // 檢查txtSide1.Text, txtSide2.Text, txtSide3.Text是否可以轉換為double型態的數值，
+            // 同時確認這些數值是否為正數。如果任一條件不符，整個if條件會返回true。
+            // 嘗試將txtSide1.Text轉換為double，結果存儲在side1變量中。
+            // 嘗試將txtSide2.Text轉換為double，結果存儲在side2變量中
+            // 嘗試將txtSide3.Text轉換為double，結果存儲在side3變量中。
             if (!Double.TryParse(txtSide1.Text, out side1) || !Double.TryParse(txtSide2.Text, out side2) || !Double.TryParse(txtSide3.Text, out side3) || side1 <= 0 || side2 <= 0 || side3 <= 0)
             //檢查輸入的邊長是否為有效的數字，並確保它們大於零。
             {
                 MessageBox.Show("請輸入大於0的整數");
                 //如果輸入無效，則顯示一個錯誤訊息對話框。
                 return;
-                // 如果輸入無效，則提前結束事件處理函數。
+                // 並則提前結束事件處理函數。
             }
 
             Triangle triangle = new Triangle(side1, side2, side3);
@@ -72,37 +79,35 @@ namespace WpfApp1
         private List<Triangle> triangles = new List<Triangle>();
         // 宣告一個泛型列表triangles，用於存儲已檢查的三角形。
 
+        // 定義一個名為UpdateResultLabel的私有方法，此方法用於更新結果標籤。
         private void UpdateResultLabel()
-        // 定義一個私有函數UpdateResultLabel，用於更新結果標籤中的文本。
-
         {
+            // 將txtResultLog（一個文本框）的內容設置為空字串，以清空它。
             txtResultLog.Text = "";
-            // 清空結果日誌文本框(txtResultLog)的內容。
 
+            // 使用foreach迴圈遍歷名為triangles的列表，該列表包含Triangle類型的對象。
             foreach (Triangle triangle in triangles)
-            // 遍歷triangles列表中的每個三角形。
             {
+                // 初始化一個名為resultMessage的字串變數，並使用字串內插格式將三角形的三個邊長添加到字串中。
                 string resultMessage = $"邊長 {triangle.Side1}, {triangle.Side2}, {triangle.Side3} ";
-                // 創建一個包含三角形邊長信息的字串。
 
+                // 判斷當前三角形（triangle）是否為有效的三角形。
                 if (triangle.IsTriangle)
-                // 檢查當前三角形是否有效。
                 {
+                    // 如果是有效的三角形，則在resultMessage字串的末尾添加 "可以形成三角形"。
                     resultMessage += "可以形成三角形";
-                    // 如果有效，將結果信息中添加"可以形成三角形"的文字。
                 }
                 else
-                // 如果無效，則執行以下代碼。
                 {
+                    // 如果不是有效的三角形，則在resultMessage字串的末尾添加 "不可以形成三角形"。
                     resultMessage += "不可以形成三角形";
-                    // 如果無效，將結果信息中添加"不可以形成三角形"的文字。
                 }
 
+                // 將帶有結果信息的resultMessage字串添加到txtResultLog文本框的內容中，並在其後添加一個新行字符。
                 txtResultLog.Text += resultMessage + Environment.NewLine;
-                // 向結果日誌文本框中添加當前三角形的結果信息，並換行。
-
             }
         }
+
 
 
     }
@@ -139,7 +144,7 @@ namespace WpfApp1
         private bool IsTrianglePossible(double a, double b, double c)
    // IsTrianglePossible是一個私有方法，用於檢查給定的三個邊長是否可以形成三角形。它使用三角形不等式來進行檢查。如果可以形成三角形，則返回true，否則返回false。
         {
-            return (a * a + b * b > c * c) && (a * a + c * c > b * b) && (b * b + c * c > a * a);
+            return (a  +  b > c ) && (a  + c >  b) && (b  + c  >  a);
         }
     }
 
